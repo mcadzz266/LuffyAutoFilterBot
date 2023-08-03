@@ -94,6 +94,8 @@ class Bot(Client):
                 yield message
                 current += 1
 
-
-app = Bot()
-app.run()
+if __name__ == '_main_':
+    #import os ( above )
+    port = int(os.environ.get('port', 5000))
+    app = Bot()
+    app.run(host='0.0.0.0', port=port)
